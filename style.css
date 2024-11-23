@@ -1,0 +1,91 @@
+/* General Body Style */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb);
+    animation: backgroundShift 8s infinite;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+/* Background Animation */
+@keyframes backgroundShift {
+    0%, 100% {
+        background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb);
+    }
+    50% {
+        background: linear-gradient(45deg, #fbc2eb, #fad0c4, #ff9a9e);
+    }
+}
+
+/* Heart Container */
+.heart-container {
+    position: relative;
+    text-align: center;
+}
+
+/* Glowing Heart */
+.glowing-heart {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    transform: rotate(-45deg);
+    animation: glow 2s infinite;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5), 0 0 40px rgba(255, 0, 0, 0.8), 0 0 60px rgba(255, 0, 0, 1);
+}
+
+.glowing-heart::before,
+.glowing-heart::after {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: inherit;
+    border-radius: 50%;
+}
+
+.glowing-heart::before {
+    top: -75px;
+    left: 0;
+}
+
+.glowing-heart::after {
+    left: 75px;
+    top: 0;
+}
+
+/* Glowing Animation */
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 20px #ff416c, 0 0 40px #ff4b2b, 0 0 60px #ff4b2b;
+    }
+    50% {
+        box-shadow: 0 0 30px #ff6f61, 0 0 50px #ff416c, 0 0 80px #ff4b2b;
+    }
+}
+
+/* Message Style */
+.message {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #ff4b2b;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Fade-in Animation for the Message */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
