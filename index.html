@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open the Love Letter 💌</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <audio id="loveMusic" loop>
+        <source src="The 1975 - About You.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+        
+    </audio>
+    
+
+    <!-- Main Container -->
+    <div class="container">
+        <div class="letter">
+            <!-- Envelope -->
+            <div id="envelope" class="envelope">
+                <div class="flap"></div>
+                <p class="text">Click to Open 💌</p>
+            </div>
+
+            <!-- Love Letter -->
+            <div id="letter" class="hidden">
+                <h1>Dear Darling,</h1>
+                <p>
+                    
+                    Happy 4th monthsary! I'm glad we're still together, despite the fact that we've not been 
+                    getting along lately. I hope everything is fine now. I wish we could bond and spend more 
+                    time together. I'm thankful that you gave me a chance. I'm sorry for disappointing you with
+                    my behavior, but I'm doing my best to show my love to you. Iloveyoualways darlinggg.<br><br>
+                    Always yours,<br>
+                    [Your Darlingggg❤️❤️❤️]
+                </p>
+                <button id="close">Close Letter</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Interaction -->
+    <script>
+        const envelope = document.getElementById('envelope');
+        const letter = document.getElementById('letter');
+        const music = document.getElementById('loveMusic');
+        const closeBtn = document.getElementById('close');
+        music.play(); // Start music
+        
+
+        // Open the love letter
+        envelope.addEventListener('click', () => {
+            envelope.style.display = 'none';
+            letter.classList.remove('hidden');
+            music.play(); // Start music
+           
+        });
+
+        // Close the love letter
+        closeBtn.addEventListener('click', () => {
+            letter.classList.add('hidden');
+            envelope.style.display = 'block';
+            
+        });
+    </script>
+</body>
+</html>
